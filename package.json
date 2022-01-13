@@ -18,5 +18,6 @@
   "homepage": "https://github.com/IvanB475/CLI-url-parser#readme",
   "dependencies": {
     "chalk": "^5.0.0"
-  }
+  },
+  "type": "module"
 }
