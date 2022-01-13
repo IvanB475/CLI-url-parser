@@ -1,0 +1,19 @@
+{
+  "name": "cli-url-parser",
+  "version": "1.0.0",
+  "description": "Command line script that accepts an argument which is a path to a text file. Script parses URLs within the file and returns predefined output.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IvanB475/CLI-url-parser.git"
+  },
+  "author": "Ivan Beljan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/IvanB475/CLI-url-parser/issues"
+  },
+  "homepage": "https://github.com/IvanB475/CLI-url-parser#readme"
+}
