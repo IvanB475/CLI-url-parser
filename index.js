@@ -2,7 +2,8 @@ import chalk from "chalk";
 import * as fs from "fs";
 import * as readline from "readline";
 import * as url from "url";
-import { isValidURL } from "./utils/validateUrl.js";
+import { getIndexOfClosingBracket, getIndexOfOpeningBracket } from "./utils/indexOfBrackets.js";
+import { isValidUrl } from "./utils/validateUrl.js";
 import { validateBrackets } from "./utils/verifyLineInput.js";
 
 //check if argument is provided
@@ -52,13 +53,20 @@ rl.on("line", (line) => {
     );
     //    process.kill(process.pid, 'SIGTERM');
   } else {
-    const arrOfStrings = line.split(" ");
-    const urls = arrOfStrings.map((url, index) => {
-      if (isValidURL(url)) return url;
+
+    const {openingBracketIndex, closingBracketIndex} = getIndexOfOpeningBracket(line);
+    // const closingBracketIndex = getIndexOfClosingBracket(line);
+    const inputWithinBrackets = line.substring(openingBracketIndex + 1, closingBracketIndex);
+    const arrOfStrings = inputWithinBrackets.split(" ");
+    const urls = arrOfStrings.map((url) => {
+      if (isValidUrl(url)) return url;
     });
 
     const filteredUrls = urls?.filter((url) => url);
-    console.log(filteredUrls);
-    // const uniqueUrls = [...new Set(filteredUrls)];
+    const urlToMakeRequestTo = filteredUrls[filteredUrls.length - 1];
+    console.log(urlToMakeRequestTo);
   }
 });
+
+
+    // const uniqueUrls = [...new Set(filteredUrls)];
