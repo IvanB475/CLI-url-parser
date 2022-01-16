@@ -1,3 +1,4 @@
-bla bla asdfasdf www.google.com other example [ www.blabla.com ] fg www.xhz.com www.testt.com
+bla bla asdfasdf www.google.com other example [ www.blabla.com ] fg www.xhz.com www.testt.com [ www.blabla.com ]  [ www.blabla.com ]  [ www.blabla.com ]  [ www.blabla.com ] 
 other example [ www.blabla.com ] fg 
-yet another example [ some text www.test.com ] sdfgsd
+yet another example [ some text www.test.com ] sdfgsd [
+other example [ www.blabla.com ] fg 
