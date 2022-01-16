@@ -1,4 +1,5 @@
-bla bla asdfasdf www.google.com other example [ www.blabla.com ] fg www.xhz.com www.testt.com [ www.blabla.com ]  [ www.blabla.com ]  [ www.blabla.com ]  [ www.blabla.com ] 
+bla bla asdfasdf www.google.com other example \[\[ [[ www.blabla.com ] fg www.xhz.com www.testt.com [ www.xyz.com ]]  [ www.mmmm.com ]  [ www.test.com ]]  [ www.ReturnMe.com ] ]
 other example [ www.blabla.com ] fg 
-yet another example [ some text www.test.com ] sdfgsd [
+yet another example [ some text www.test.com ] sdfgsd []
 other example [ www.blabla.com ] fg 
+yet another example
