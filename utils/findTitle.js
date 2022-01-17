@@ -1,9 +1,8 @@
-import chalk from "chalk";
 
 //function that searches for title in provided string
-export const findTitle = (htmlBody) => {
+export const findTitle = async (htmlBody) => {
     if(!htmlBody){
-        console.error(chalk.red("findTitle requires htmlBody to be provided"));
+        console.errorchalk.red("findTitle requires htmlBody to be provided");
         process.kill(process.pid, 'SIGTERM');
     }
 

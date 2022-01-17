@@ -1,10 +1,9 @@
-import chalk from "chalk";
 
 
 //helper function that searches for the first email within provided string
-export const findEmail = (htmlBody) => {
+export const findEmail = async (htmlBody) => {
   if (!htmlBody) {
-    console.error(chalk.red("findEmail requires htmlBody to be provided"));
+    console.error("findEmail requires htmlBody to be provided");
     process.kill(process.pid, "SIGTERM");
   }
 

@@ -1,4 +1,3 @@
-import chalk from "chalk";
 import * as fs from "fs";
 import * as readline from "readline";
 import { makeRequests } from "./utils/httpRequest.js";
@@ -9,7 +8,7 @@ dotenv.config();
 
 //check if argument is provided
 if (process.argv.length < 3) {
-  console.error(chalk.red("please provide path to .txt file"));
+  console.error("please provide path to .txt file");
   process.kill(process.pid, "SIGTERM");
 }
 
@@ -17,17 +16,13 @@ const pathToTxtFile = process.argv[2];
 
 //check if provided argument contains .txt extension
 if (!pathToTxtFile.includes(".txt")) {
-  console.error(chalk.red("Argument provided is not a .txt file"));
+  console.error("Argument provided is not a .txt file");
   process.kill(process.pid, "SIGTERM");
 }
 
 //check argument was provided with forward slash (on windows) --> Explanation: on windows it's converted to "random" absolute path
 if (pathToTxtFile.includes("C:/")) {
-  console.error(
-    chalk.red(
-      "Please do not provide starting forward slash on Windows without a dot"
-    )
-  );
+  console.error("Please do not provide starting forward slash on Windows without a dot");
   process.kill(process.pid, "SIGTERM");
 }
 
@@ -47,7 +42,7 @@ const urlsToMakeRequestTo = [];
 for await(const line of rl) {
   lineCounter++;
   if (!validateBrackets(line)) {
-    console.error(chalk.red(`Wrong input on line ${lineCounter}, every opened bracket has to be closed.`));
+    console.error(`Wrong input on line ${lineCounter}, every opened bracket has to be closed.`);
   } else {
     const urlToMakeRequestTo = await getUrl(line);
     if(urlToMakeRequestTo && !urlsToMakeRequestTo.includes(urlToMakeRequestTo)) {

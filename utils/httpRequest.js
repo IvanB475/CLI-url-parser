@@ -1,4 +1,3 @@
-import chalk from "chalk";
 import axios from "axios";
 import { hashEmail } from "./hashEmail.js";
 import { findEmail } from "./findEmail.js";
@@ -9,7 +8,7 @@ import { sleep } from "./sleep.js";
 // function that makes http get request to provided url
 export const makeRequestToUrl = async (urlToMakeRequestTo) => {
     if(!urlToMakeRequestTo){
-        console.error(chalk.red("makeRequestToUrl requires urlToMakeRequestTo to be provided"));
+        console.error("makeRequestToUrl requires urlToMakeRequestTo to be provided");
         process.kill(process.pid, 'SIGTERM');
     }
     const urlConvertedToHttps = `https://${urlToMakeRequestTo}`;
@@ -29,20 +28,20 @@ export const makeRequests = async (urlsToMakeRequestTo) => {
         try {
         let urlResponseBody = await makeRequestToUrl(urlToMakeRequestTo);
         if(!urlResponseBody){
-          await sleep(6000);
+          await sleep(60000);
           urlResponseBody = await makeRequestToUrl(urlToMakeRequestTo);
           if(!urlResponseBody) {
-            console.error(chalk.red(`Both requests to ${urlToMakeRequestTo} have failed`));
+            console.error(`Both requests to ${urlToMakeRequestTo} have failed`);
           }
         }
     
         if(urlResponseBody) {
         const htmlBody = urlResponseBody || 'Basic text';
-        const title = findTitle(htmlBody) || undefined;
-        const email = findEmail(htmlBody) || undefined;
+        const title = await findTitle(htmlBody) || undefined;
+        const email = await findEmail(htmlBody) || undefined;
         const responseObject = { url: urlToMakeRequestTo, title}
         if(email) {
-          const hashedEmail = hashEmail(email);
+          const hashedEmail = await hashEmail(email);
           responseObject.email = hashedEmail;
         }
     
@@ -52,7 +51,7 @@ export const makeRequests = async (urlsToMakeRequestTo) => {
         }
         } catch(e) {
             const errMessage = e.message || 'something went wrong';
-            console.log(chalk.red(errMessage));
+            console.logchalk.red(errMessage);
     
         }
     }

@@ -3,7 +3,7 @@ import { isValidUrl } from "./validateUrl.js";
 
 
 export const getUrl = async (line) => {
-    const {openingBracketIndex, closingBracketIndex} = getIndexOfOpeningBracket(line);
+    const {openingBracketIndex, closingBracketIndex} = await getIndexOfOpeningBracket(line);
     if(openingBracketIndex === undefined || closingBracketIndex === undefined) {
         return false;
     }
