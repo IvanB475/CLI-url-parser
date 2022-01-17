@@ -1,4 +1,3 @@
-import chalk from "chalk";
 
 // finds valid urls within given line
 export const isValidUrl = (line) => {

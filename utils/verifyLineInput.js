@@ -3,7 +3,7 @@ import chalk from "chalk";
 //validates if the count of open brackets and closed brackets is the same within the line
 export const validateBrackets = (line) => {
     if(!line) {
-        console.log(chalk.red("validateBrackets requires line to be provided"));
+        console.error(chalk.red("validateBrackets requires line to be provided"));
         process.kill(process.pid, 'SIGTERM');
     }
     const countOpenBrackets = line.match(/\[/g)?.length;
