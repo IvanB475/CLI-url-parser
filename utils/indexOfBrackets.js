@@ -19,7 +19,11 @@ export const getIndexOfOpeningBracket = (line) => {
     }
     const numberOfBracketsToEscape = numberOfEscapedBrackets + 1;
     const closingBracketIndex = getIndexOfClosingBracket(line, numberOfBracketsToEscape)
+/*     if(openingBracketIndex === undefined) {
+        return {openingBracketIndex, closingBracketIndex: undefined};
+    } */
     return {openingBracketIndex, closingBracketIndex};
+
 }
 
 
@@ -30,6 +34,6 @@ export const getIndexOfClosingBracket = (line, numberOfEscapedBrackets) => {
         process.kill(process.pid, 'SIGTERM');
     }
     const closingBrackets = [...line.matchAll(/\]/g)];
-    const closingBracketIndex = closingBrackets[numberOfEscapedBrackets]?.index;
+    const closingBracketIndex = closingBrackets.length < 2 ? closingBrackets[0]?.index : closingBrackets[numberOfEscapedBrackets]?.index;
     return closingBracketIndex;
 }

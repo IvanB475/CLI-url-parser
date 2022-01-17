@@ -50,7 +50,7 @@ for await(const line of rl) {
     console.error(chalk.red(`Wrong input on line ${lineCounter}, every opened bracket has to be closed.`));
   } else {
     const urlToMakeRequestTo = await getUrl(line);
-    if(!urlsToMakeRequestTo.includes(urlToMakeRequestTo)) {
+    if(urlToMakeRequestTo && !urlsToMakeRequestTo.includes(urlToMakeRequestTo)) {
     urlsToMakeRequestTo.push(urlToMakeRequestTo);
     }
   }
