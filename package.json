@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/IvanB475/CLI-url-parser#readme",
   "dependencies": {
-    "chalk": "^5.0.0"
+    "axios": "^0.24.0",
+    "chalk": "^5.0.0",
+    "dotenv": "^14.1.0"
   },
   "type": "module"
 }
