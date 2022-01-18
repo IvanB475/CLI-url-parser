@@ -3,3 +3,6 @@ bla bla asdfasdf www.google.com other example \[\[ [[ www.blabla.com ] fg www.xh
 [ w.google.com ]
 \[ www.cimplet.hr ]
 www.google.com
+multiple urls [bla www.first.com asdfasdf www.second.com truc]
+multiple levels[ [www.first.com] www.second.com] 
+multiple levels[ www.first.com [www.third.com]] 

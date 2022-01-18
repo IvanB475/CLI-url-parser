@@ -18,9 +18,6 @@ export const getIndexOfOpeningBracket = async (line) => {
     }
     const numberOfBracketsToEscape = numberOfEscapedBrackets + 1;
     const closingBracketIndex = getIndexOfClosingBracket(line, numberOfBracketsToEscape)
-/*     if(openingBracketIndex === undefined) {
-        return {openingBracketIndex, closingBracketIndex: undefined};
-    } */
     return {openingBracketIndex, closingBracketIndex};
 
 }

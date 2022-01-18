@@ -22,7 +22,7 @@ export const makeRequestToUrl = async (urlToMakeRequestTo) => {
     }
 }
 
-// function that makes requests to every url in the array
+// function that makes requests to every url in the array with a second delay between each request
 export const makeRequests = async (urlsToMakeRequestTo) => {
     for await(const urlToMakeRequestTo of urlsToMakeRequestTo) {
         try {
@@ -51,7 +51,7 @@ export const makeRequests = async (urlsToMakeRequestTo) => {
         }
         } catch(e) {
             const errMessage = e.message || 'something went wrong';
-            console.logchalk.red(errMessage);
+            console.log(errMessage);
     
         }
     }
